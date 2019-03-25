@@ -1,0 +1,203 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Album example for Bootstrap</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/restaurant.css' %}" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<div class="collapse bg-dark" id="navbarHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-md-7 py-4">
+						<h4 class="text-white">Resto</h4>
+						<p class="text-muted">>Get the Best Restaurants, Cafes and Bars Recommeded near you</p>
+					</div>
+					<div class="col-sm-4 offset-md-1 py-4">
+						<h4 class="text-white">Contact</h4>
+						<ul class="list-unstyled">
+							<li><a href="#" class="text-white">Follow on Twitter</a></li>
+							<li><a href="#" class="text-white">Like on Facebook</a></li>
+							<li><a href="#" class="text-white">Email me</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="navbar navbar-dark bg-dark box-shadow">
+			<div class="container d-flex justify-content-between">
+				<a href="/" class="navbar-brand d-flex align-items-center">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+						<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+						<circle cx="12" cy="13" r="4"></circle>
+					</svg>
+					<strong>Resto</strong>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+					aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<main role="main">
+
+		<section class="jumbotron text-center">
+			<div class="container">
+				<h1 class="jumbotron-heading">Popular Restaurants</h1>
+				<p class="lead text-muted">Popular Restaurants, Cafes, and Bars in <span><strong>Bangalore</strong><span>.</p>
+
+
+
+				<div class="bd-example">
+					<div class="btn-group">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">Cuisine</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</div>
+					</div><!-- /btn-group -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">Restaurant Type</button>
+						<div class="dropdown-menu" x-placement="bottom-start"
+							style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</div>
+					</div><!-- /btn-group -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">Pricing</button>
+						<div class="dropdown-menu" x-placement="bottom-start"
+							style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</div>
+					</div><!-- /btn-group -->
+				</div>
+
+				<form autocomplete="off" action="/restaurants">
+					<div class="input-group mt-3">
+
+						<input type="text" name="locality" class="form-control" placeholder="Locality Name"
+							aria-label="Recipient's username" aria-describedby="basic-addon2">
+						<div class="input-group-append">
+							<input name="search" value="{{ request.GET.search }}" style="display: none;">
+							<input type="submit" class="btn btn-outline-secondary" value="Search">
+						</div>
+
+					</div>
+				</form>
+
+			</div>
+		</section>
+
+		<div class="album py-5 bg-light">
+			<div class="container">
+				<div class="row">
+
+					{% for restaurant in restaurants %}
+
+
+					<div class="col-md-4">
+						<div class="card mb-4 box-shadow">
+							<img class="card-img-top" src="{{ restaurant.restaurantImage }}" alt="{{ restaurant.restaurantName }}">
+							<div class="card-body">
+								<h4 class="card-text"><a
+										href="{% url 'restaurant_detail' id=restaurant.id %}">{{ restaurant.restaurantName }}</a></h4>
+								<p class="card-text">{{ restaurant.restaurantCusine }}</p>
+
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary"><span
+												style="margin-right: 5px;">&#8377;</span>{{ restaurant.restaurantCostForTwo }}</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary"><span class="fa fa-star checked"
+												style="margin-right: 5px;"></span>{{ restaurant.restaurantRating }}</button>
+									</div>
+									<small class="text-muted">9 mins</small>
+								</div>
+								<a href="{% url 'restaurant_detail' id=restaurant.id %}" class="btn btn-primary btn-block"
+									style="color: white; cursor: pointer; margin-top: 10px;">See More</a>
+
+							</div>
+						</div>
+					</div>
+
+					{% endfor %}
+
+				</div>
+			</div>
+		</div>
+
+
+		<nav aria-label="Page navigation" style="margin-top: 20px;">
+			<ul class="pagination justify-content-center">
+
+				{% if restaurants.has_previous %}
+				<li class="page-item">
+					<a class="page-link" class="page-item" href="?search={{ query }}&page=1">First</a>
+				</li>
+				<li class="page-item ">
+					<a class="page-link" href="?search={{ query }}&page={{ restaurants.previous_page_number }}">Previous</a>
+				</li>
+				{% endif %}
+
+
+				<li class="page-item"><a style="text-decoration: none; color: inherit;" href="#" class="page-link">Page
+						{{ restaurants.number }} of {{ restaurants.paginator.num_pages }}</a>
+				</li>
+
+				{% if restaurants.has_next %}
+				<li class="page-item">
+					<a class="page-link" href="?search={{ query }}&page={{ restaurants.next_page_number }}">Next</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="?search={{ query }}&page={{ restaurants.paginator.num_pages }}">Last</a>
+				</li>
+				{% endif %}
+			</ul>
+		</nav>
+
+	</main>
+
+	<footer class="text-muted">
+		<div class="container">
+			<p class="float-right">
+				<a href="#">Back to top</a>
+			</p>
+			<p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+			<p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting
+					started guide</a>.</p>
+		</div>
+	</footer>
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+ /*#0828dd*/
+
+
+
+.logo i{
+	font-size: 60px;
+	color: #0828dd;
+}
+
+.logo span{
+	font-size: 40px;
+	color: #0828dd;
+	font-family: 'Carter One', cursive;
+	margin: 10px;
+}
+
+
+
+.foodpic img{
+	width: 45%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+section{
+	width: 55%;
+}
+
+.logo, .login{
+	display: inline-block;
+	margin: 50px;
+}
+
+.login{
+  font-family: 'El Messiri', sans-serif;
+  float: right;
+  margin-top: 70px;
+}
+
+.login button{
+	padding-top: 3px;
+	padding-bottom: 1px;
+}
+
+.location{
+	margin: 50px;
+}
+
+.location h2
+{
+	font-family: 'Lusitana', serif;
+}
+
+.location .input-group{
+	margin-top: 50px;
+}
+
+.location h3{
+	margin-top: 100px;
+}
+
+
+[placeholder]{
+	font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.btn-primary {
+	font-family: 'Righteous', cursive;
+    color: white !important;
+    border-color: #0828dd !important;
+    background: #0828dd !important;
+}
+
+
+.input-group-text{
+	color: white !important;
+	background: #0828dd !important;
+}
+
+.fa-search-location{
+	font-size: 20px;
+}
+
+
+.foot{
+	margin-top: 30px;
+	background: #0828dd;
+	text-align: center;
+	font-family: 'Righteous', cursive;
+	color: white;
+
+	position: relative;
+	top:300px;
+	bottom: 0;
+	width: 100%;
+}
+
+.foot .logo i{
+	font-size: 60px;
+	color: white;
+}
+
+.foot .logo span{
+	font-size: 40px;
+	color: white;
+	font-family: 'Carter One', cursive;
+	/*margin: 10px;*/
+}
+
+.foot .logo{
+	display: inline-block;
+	margin: 20px 0 0 0;
+}
