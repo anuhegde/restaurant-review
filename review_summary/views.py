@@ -4,6 +4,10 @@ from django.db.models import Q
 # Create your views here.
 from tablib import Dataset
 from .models import Restaurant, Review
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect
+from django import forms
+from .forms import UserRegistrationForm
 
 
 
@@ -49,3 +53,22 @@ def restaurant_detail(request, id):
     review = Review.objects.filter(rest_id=id)
     # rest = Restaurant.objects.all()
     return render(request, 'restaurant/restaurant_detail.html', {'restaurant': rest, 'reviews': review})
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            userObj = form.cleaned_data
+            username = userObj['username']
+            email =  userObj['email']
+            password =  userObj['password']
+            if not (User.objects.filter(username=username).exists() or User.objects.filter(email=email).exists()):
+                User.objects.create_user(username, email, password)
+                user = authenticate(username = username, password = password)
+                login(request, user)
+                return HttpResponseRedirect('/')
+            else:
+                raise forms.ValidationError('Looks like a username with that email or password already exists')
+    else:
+        form = UserRegistrationForm()
+    return render(request, 'mysite/register.html', {'form' : form})

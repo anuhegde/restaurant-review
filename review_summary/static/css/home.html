@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="Home.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Carter+One|El+Messiri|Lusitana|ZCOOL+XiaoWei|Righteous|Acme" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<section class="main">
+
+		<div class="logo">
+			<i class="fas fa-hamburger"></i>
+			<span>RESTO</span>
+		</div>
+
+		<h1>Get the best Restaurants, Cafes, and bars recommeded near you.</h1>
+
+		<div class="inputs">
+
+
+
+			<div><i class="fas fa-align-justify"></i><span>Cuisine</span></div>
+
+			<div><i class="fas fa-align-justify"></i><span>Restaurnt Type</span></div>
+
+			<div><i class="fas fa-align-justify"></i><span>Pricing</span></div>
+
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-search"></i></span>
+			</div>
+			<input type="text" class="form-control" id="search" placeholder="Search above categories in a locality">
+		</div>
+
+	</section>
+
+
+	<section class="RestoCards">
+	<h3>Popular Restaurants</h3>
+	<br>
+
+	{% for restaurant in restaurants %}
+			{{ restaurant }}
+	{% endfor %}
+
+	<div class="row">
+    	<div class="col">
+    		<div class="card">
+  			<img src="Images/mcd.jpg" class="card-img-top">
+  				<div class="card-body">
+    				<h5 class="card-title">Mc Donald's</h5>
+    				<p class="card-text">Cuisines</p>
+    				<a href="https://www.apolloclinic.com/for-patients/services/health-at-home/health-at-home-packages" class="btn btn-primary btn-sm">SEE MORE</a>
+  				</div>
+			</div>
+    	</div>
+
+    	<div class="col">
+    		<div class="card">
+  			<img src="Images/kfc.jpg" class="card-img-top">
+  				<div class="card-body">
+    				<h5 class="card-title">KFC</h5>
+    				<p class="card-text">Cuisines</p>
+    				<a href="Chat.html" class="btn btn-danger btn-sm">SEE MORE</a>
+  				</div>
+			</div>    		
+    	</div>
+
+    	<div class="col">
+    		<div class="card">
+  			<img src="Images/ccd.jpg" class="card-img-top">
+  				<div class="card-body">
+    				<h5 class="card-title">Cafe Coffee Day</h5>
+    				<p class="card-text">Cuisines</p>
+    				<a href="https://www.1mglabs.com/?gclid=CjwKCAiA1ZDiBRAXEiwAIWyNCwHCaJpeoKiWoqjatZoZ22eaJ1KMeqzX9evTfXKrjEqqycPrRr8uthoCr2gQAvD_BwE" class="btn btn-success btn-sm">SEE MORE</a>
+  				</div>
+			</div>    		
+    	</div>
+
+    	<div class="col">
+    		<div class="card">
+  			<img src="Images/starbucks.jpg" class="card-img-top">
+  				<div class="card-body">
+    				<h5 class="card-title">Starbucks</h5>
+    				<p class="card-text">Cuisines</p>
+    				<a href="Order.html" class="btn btn-warning btn-sm">SEE MORE</a>
+  				</div>
+			</div>    		
+    	</div>
+    </div>
+
+</section>
+
+<div class="foot">
+	<div>
+		<div class="logo">
+			<i class="fas fa-hamburger"></i>
+			<span>RESTO</span>
+		</div>
+		<br><br>
+		<p>Copyright &copy; 2019, Resto. All rights reserved.</p>
+	</div>
+</div>
+
+
+</body>
+
+</html>

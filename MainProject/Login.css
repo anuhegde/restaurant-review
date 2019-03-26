@@ -1,0 +1,32 @@
+.card{
+    width: 500px;
+    padding: 50px;
+}
+body{
+    padding-top: 10%;
+    padding-left: 33%;
+    font-family: 'Righteous', cursive;
+}
+form{
+    padding: 50px;    
+}
+div .logo{
+    text-align: center;
+    padding:10px;
+    position: absolute;
+    top: 10px;
+    left:120px;
+    color: #ff4d4d;
+}
+
+.logo i{
+    font-size: 60px;
+    color: #0828dd;
+}
+
+.logo span{
+    font-size: 40px;
+    color: #0828dd;
+    font-family: 'Carter One', cursive;
+    margin: 10px;
+}

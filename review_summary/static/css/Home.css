@@ -1,0 +1,101 @@
+.main{
+	background: url("main.jpg");
+	color: white;
+	text-align: center;
+}
+
+.logo{
+	color: white;
+	padding: 50px;
+}
+
+
+.logo i{
+	font-size: 60px;
+	/*color: #0828dd;*/
+}
+
+.logo span{
+	font-size: 40px;
+	font-family: 'Carter One', cursive;
+	margin: 10px;
+}
+
+.input-group-text{
+	color: white !important;
+	background: #0828dd !important;
+}
+
+.inputs{
+	font-family: 'Righteous', cursive;
+	font-size: 25px;
+	position: relative;
+	top:120px;
+}
+
+.inputs div{
+	display: inline-block;
+	padding: 50px;
+	margin-left: 12%;
+}
+
+.inputs div i{
+	margin: 10px;
+}
+
+[placeholder]{
+	font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.main .input-group{
+	margin-top: 50px;
+	padding: 50px;
+	padding-bottom: 80px;
+}
+
+
+.RestoCards{
+	font-family: 'Acme', sans-serif;
+	margin: 50px;
+}
+
+.row img{
+	height: 200px;
+}
+
+.row .btn{
+	padding-top: 10px;
+	padding-bottom: 2px;
+}
+
+
+.foot{
+	margin-top: 30px;
+	background: #0828dd;
+	text-align: center;
+	font-family: 'Righteous', cursive;
+	color: white;
+
+	position: relative;
+	top:300px;
+	bottom: 0;
+	width: 100%;
+}
+
+.foot .logo i{
+	font-size: 60px;
+	color: white;
+}
+
+.foot .logo span{
+	font-size: 40px;
+	color: white;
+	font-family: 'Carter One', cursive;
+	/*margin: 10px;*/
+}
+
+.foot .logo{
+	display: inline-block;
+	margin: 20px 0 0 0;
+	padding: 0;
+}
