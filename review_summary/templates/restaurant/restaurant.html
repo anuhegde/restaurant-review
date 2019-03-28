@@ -2,15 +2,25 @@
 
 <!doctype html>
 <html lang="en">
-
+<style>
+.dropdown-menu-center {
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+}
+</style>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Album example for Bootstrap</title>
-	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link href="{% static 'css/restaurant.css' %}" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
 </head>
 
@@ -45,7 +55,7 @@
 					<strong>Resto</strong>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-					aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+					aria-controls="navbarHeader"  aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 			</div>
@@ -60,45 +70,59 @@
 				<p class="lead text-muted">Popular Restaurants, Cafes, and Bars</p>
 
 
+				<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cuisine
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu dropdown-menu-center">
+					  <li><a href="#">American</a></li>
+					  <li><a href="#">Asian</a></li>
+					  <li><a href="#">BBQ</a></li>
+					  <li><a href="#">Biryani</a></li>
+					  <li><a href="#">Burger</a></li>
+					  <li><a href="#">Chinese</a></li>
+					  <li><a href="#">Continental</a></li>
+					  <li><a href="#">Desserts</a></li>
+					  <li><a href="#">Healthy</a></li>
+					  <li><a href="#">Ice Cream</a></li>
+					  <li><a href="#">Indian</a></li>
+					  <li><a href="#">Juice</a></li>
+					  <li><a href="#">Mexican</a></li>
+					  <li><a href="#">Middle East</a></li>
+					  <li><a href="#">North Indian</a></li>
+					  <li><a href="#">South Indian</a></li>
+					  <li><a href="#">Street Food</a></li>
+					  <li><a href="#">Thali</a></li>
+					  <li><a href="#">Sushi</a></li>
+					  <li><a href="#">Vegetarian</a></li>
+					</ul>
+				  </div>
 
-				<div class="bd-example">
-					<div class="btn-group">
-						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">Cuisine</button>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<a class="dropdown-item" href="#">Something else here</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Separated link</a>
-						</div>
-					</div><!-- /btn-group -->
-					<div class="btn-group">
-						<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">Restaurant Type</button>
-						<div class="dropdown-menu" x-placement="bottom-start"
-							style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<a class="dropdown-item" href="#">Something else here</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Separated link</a>
-						</div>
-					</div><!-- /btn-group -->
-					<div class="btn-group">
-						<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">Pricing</button>
-						<div class="dropdown-menu" x-placement="bottom-start"
-							style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<a class="dropdown-item" href="#">Something else here</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Separated link</a>
-						</div>
-					</div><!-- /btn-group -->
-				</div>
+				  <div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Restaurant Type
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu dropdown-menu-center">
+					  <li><a href="#">Fast</a></li>
+					  <li><a href="#">Bar</a></li>
+					  <li><a href="#">Cafe</a></li>
+					  <li><a href="#">Buffet</a></li>
+					  <li><a href="#">Indian</a></li>
+					</ul>
+				  </div>
 
+				  <div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pricing
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu dropdown-menu-center">
+					  <li><a href="#">500</a></li>
+					  <li><a href="#">1000</a></li>
+					  <li><a href="#">1500</a></li>
+					  <li><a href="#">2000</a></li>
+					  <li><a href="#">2500</a></li>
+					</ul>
+				  </div>
+
+				
+<center>
 				<form autocomplete="off" action="/restaurants">
 					<div class="input-group mt-3">
 
@@ -110,7 +134,7 @@
 						</div>
 
 					</div>
-				</form>
+				</form></center>
 
 			</div>
 		</section>
@@ -152,7 +176,7 @@
 			</div>
 		</div>
 
-
+<center>
 		<nav aria-label="Page navigation" style="margin-top: 20px;">
 			<ul class="pagination justify-content-center">
 
@@ -180,6 +204,7 @@
 				{% endif %}
 			</ul>
 		</nav>
+	</center>
 
 	</main>
 
@@ -194,10 +219,7 @@
 		</div>
 	</footer>
 
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
-	<script src="{% static 'js/popper.min.js' %}"></script>
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
 </body>
 
 </html>
